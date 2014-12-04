@@ -1,0 +1,17 @@
+@(movies: java.util.List[models.Movie])
+
+@main("Welcome to Play") {
+    <h1>@movies.size() Movie@(if(movies.size() != 1) "s")</h1>
+    <ul>
+        @for(movie <- movies) {
+            <li>@movie.title - @movie.country - @movie.year</li>
+        }
+    </ul>
+
+    @helper.form(routes.Application.addMovie()) {
+        <input name="title" placeholder="Enter a movie title">
+        <input name="country" placeholder="Country">
+        <input name="year" placeholder="Year">
+        <button type="submit">Add</button>
+    }
+}

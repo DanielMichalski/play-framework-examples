@@ -3,7 +3,11 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
+GET         /                    controllers.Application.index()
+GET         /add/:x/:y           controllers.Application.add(x:Integer, y:Integer)
+
+POST        /movies              controllers.Application.addMovie()
+GET         /movies              controllers.Application.getMovies()
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET         /assets/*file        controllers.Assets.at(path="/public", file)
